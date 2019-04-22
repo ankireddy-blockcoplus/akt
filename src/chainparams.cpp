@@ -82,24 +82,24 @@ public:
         consensus.BIP66Height = 811879; // 7aceee012833fa8952f8835d8b1b3ae233cd6ab08fdb27a771d2bd7bdc491894
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
-        consensus.nPowTargetSpacing = 2.5 * 60;
+        consensus.nPowTargetSpacing = 2 * 60; // block spacing
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 6048; // 75% of 8064
         consensus.nMinerConfirmationWindow = 8064; // nPowTargetTimespan / nPowTargetSpacing * 4
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1485561600; // January 1, 2008
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1555915638; // December 31, 2008
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1485561600; // January 28, 2017
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1517356801; // January 31st, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1555915638; // January 31st, 2018
 
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 1;
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1485561600; // January 28, 2017
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1517356801; // January 31st, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1555915638; // January 31st, 2018
 
         // The best chain should have at least this much work.
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000001488d32719b8eb30150");
@@ -128,16 +128,16 @@ public:
         // possible options.
         // This is fine at runtime as we'll fall back to using them as a oneshot if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
-        // release ASAP to avoid it where possible.
+        // release ASAP to avtcointools.com");
+        // vSeeds.emplace_back("dnsseed.aoid it where possible.
         // vSeeds.emplace_back("seed-a.aktcoin.loshan.co.uk");
         // vSeeds.emplace_back("dnsseed.thrasher.io");
-        // vSeeds.emplace_back("dnsseed.aktcointools.com");
-        // vSeeds.emplace_back("dnsseed.aktcoinpool.org");
+        // vSeeds.emplace_back("dnsseed.akktcoinpool.org");
         // vSeeds.emplace_back("dnsseed.koin-project.com");
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,48);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,26);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,50);
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,26);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,176);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x01, 0x8E, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x01, 0x8E, 0xAD, 0xE4};
